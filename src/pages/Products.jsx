@@ -1,32 +1,34 @@
-import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
+import CategoryFilter from "../components/CategoryFilter";
+import ProductList from "../components/ProductList";
+import Pagination from "../components/Pagination";
+
 import products from "../data/products";
 
 export default function Products() {
+
    return (
+
        <div>
 
            <h1>Products</h1>
 
-           {
-               products.map(product => (
+           <SearchBar />
 
-                   <div key={product.id}>
+           <br/>
 
-                       <h3>{product.name}</h3>
+           <CategoryFilter />
 
-                       <p>₹{product.price}</p>
+           <br/>
 
-                       <Link to={`/products/${product.id}`}>
-                           View Details
-                       </Link>
+           <ProductList
+               products={products}
+           />
 
-                       <hr/>
-
-                   </div>
-
-               ))
-           }
+           <Pagination />
 
        </div>
+
    );
+
 }
