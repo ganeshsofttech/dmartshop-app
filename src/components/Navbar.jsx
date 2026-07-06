@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ cartCount }) {
 
    const activeStyle = {
+
        color: "red",
+
        fontWeight: "bold"
+
    };
 
    return (
@@ -13,7 +16,7 @@ export default function Navbar() {
 
            <NavLink
                to="/"
-               style={({isActive}) =>
+               style={({ isActive }) =>
                    isActive ? activeStyle : {}
                }
            >
@@ -24,7 +27,7 @@ export default function Navbar() {
 
            <NavLink
                to="/products"
-               style={({isActive}) =>
+               style={({ isActive }) =>
                    isActive ? activeStyle : {}
                }
            >
@@ -35,7 +38,7 @@ export default function Navbar() {
 
            <NavLink
                to="/categories"
-               style={({isActive}) =>
+               style={({ isActive }) =>
                    isActive ? activeStyle : {}
                }
            >
@@ -46,18 +49,18 @@ export default function Navbar() {
 
            <NavLink
                to="/cart"
-               style={({isActive}) =>
+               style={({ isActive }) =>
                    isActive ? activeStyle : {}
                }
            >
-               Cart
+               Cart ({cartCount})
            </NavLink>
 
            {" | "}
 
            <NavLink
                to="/about"
-               style={({isActive}) =>
+               style={({ isActive }) =>
                    isActive ? activeStyle : {}
                }
            >

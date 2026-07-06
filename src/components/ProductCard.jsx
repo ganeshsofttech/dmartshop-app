@@ -1,33 +1,35 @@
 import { Link } from "react-router-dom";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({
+  product,
+  addToCart,
+}) {
+  return (
+    <div
+      style={{
+        border: "1px solid gray",
 
-   return (
+        padding: 20,
 
-       <div
-           style={{
-               border: "1px solid gray",
-               padding: "15px",
-               marginBottom: "15px"
-           }}
-       >
+        marginBottom: 20,
+      }}
+    >
+      <h1>{product.image}</h1>
 
-           <h1>{product.image}</h1>
+      <h2>{product.name}</h2>
 
-           <h2>{product.name}</h2>
+      <p>{product.category}</p>
 
-           <p>Category : {product.category}</p>
+      <p>₹{product.price}</p>
 
-           <p>Price : ₹{product.price}</p>
+      <p>Stock : {product.stock}</p>
 
-           <p>Stock : {product.stock}</p>
+      <button onClick={() => addToCart(product)}>Add To Cart</button>
 
-           <Link to={`/products/${product.id}`}>
-               View Details
-           </Link>
+      <br />
+      <br />
 
-       </div>
-
-   );
-
+      <Link to={`/products/${product.id}`}>View Details</Link>
+    </div>
+  );
 }

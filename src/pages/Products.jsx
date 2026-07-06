@@ -5,30 +5,22 @@ import Pagination from "../components/Pagination";
 
 import products from "../data/products";
 
-export default function Products() {
+export default function Products({ addToCart }) {
+  return (
+    <div>
+      <h1>Products</h1>
 
-   return (
+      <SearchBar />
 
-       <div>
+      <br />
 
-           <h1>Products</h1>
+      <CategoryFilter />
 
-           <SearchBar />
+      <br />
 
-           <br/>
+      <ProductList products={products} addToCart={addToCart} />
 
-           <CategoryFilter />
-
-           <br/>
-
-           <ProductList
-               products={products}
-           />
-
-           <Pagination />
-
-       </div>
-
-   );
-
+      <Pagination />
+    </div>
+  );
 }
