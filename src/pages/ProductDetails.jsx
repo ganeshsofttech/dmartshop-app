@@ -16,11 +16,15 @@ export default function ProductDetails() {
 
        <div>
 
-           <h1>{product.name}</h1>
+           <h1>{product.image}</h1>
+
+           <h2>{product.name}</h2>
 
            <h3>Category : {product.category}</h3>
 
            <h3>Price : ₹{product.price}</h3>
+
+           <h3>Available Stock : {product.stock}</h3>
 
        </div>
 
