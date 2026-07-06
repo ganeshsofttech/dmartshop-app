@@ -30,10 +30,7 @@ export default function App() {
 
         <Route path="/products" element={<Products addToCart={addToCart} />} />
 
-        <Route
-          path="/products/:id"
-          element={<ProductDetails addToCart={addToCart} />}
-        />
+        <Route path="/products/:id" element={<ProductDetails />} />
 
         <Route path="/categories" element={<Categories />} />
 

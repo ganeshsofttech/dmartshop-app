@@ -1,25 +1,17 @@
 export default function CategoryFilter() {
+  return (
+    <div>
+      <select>
+        <option>All Categories</option>
 
-   return (
+        <option>Fruits</option>
 
-       <div>
+        <option>Dairy</option>
 
-           <select>
+        <option>Bakery</option>
 
-               <option>All Categories</option>
-
-               <option>Fruits</option>
-
-               <option>Dairy</option>
-
-               <option>Bakery</option>
-
-               <option>Grains</option>
-
-           </select>
-
-       </div>
-
-   );
-
+        <option>Grains</option>
+      </select>
+    </div>
+  );
 }

@@ -5,7 +5,9 @@ export default function ErrorPage() {
   if (isRouteErrorResponse(err)) {
     return (
       <div>
-        <h3>Oops! {err.status} — {err.statusText}</h3>
+        <h3>
+          Oops! {err.status} — {err.statusText}
+        </h3>
         {err.data && <pre>{err.data.message || String(err.data)}</pre>}
       </div>
     );

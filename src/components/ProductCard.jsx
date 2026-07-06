@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ProductCard({
-  product,
-  addToCart,
-}) {
+export default function ProductCard({ product, addToCart }) {
   return (
     <div
       style={{

@@ -1,74 +1,53 @@
 import { NavLink } from "react-router-dom";
 
 export default function Navbar({ cartCount }) {
+  const activeStyle = {
+    color: "red",
 
-   const activeStyle = {
+    fontWeight: "bold",
+  };
 
-       color: "red",
+  return (
+    <nav>
+      <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : {})}>
+        Home
+      </NavLink>
 
-       fontWeight: "bold"
+      {" | "}
 
-   };
+      <NavLink
+        to="/products"
+        style={({ isActive }) => (isActive ? activeStyle : {})}
+      >
+        Products
+      </NavLink>
 
-   return (
+      {" | "}
 
-       <nav>
+      <NavLink
+        to="/categories"
+        style={({ isActive }) => (isActive ? activeStyle : {})}
+      >
+        Categories
+      </NavLink>
 
-           <NavLink
-               to="/"
-               style={({ isActive }) =>
-                   isActive ? activeStyle : {}
-               }
-           >
-               Home
-           </NavLink>
+      {" | "}
 
-           {" | "}
+      <NavLink
+        to="/cart"
+        style={({ isActive }) => (isActive ? activeStyle : {})}
+      >
+        Cart ({cartCount})
+      </NavLink>
 
-           <NavLink
-               to="/products"
-               style={({ isActive }) =>
-                   isActive ? activeStyle : {}
-               }
-           >
-               Products
-           </NavLink>
+      {" | "}
 
-           {" | "}
-
-           <NavLink
-               to="/categories"
-               style={({ isActive }) =>
-                   isActive ? activeStyle : {}
-               }
-           >
-               Categories
-           </NavLink>
-
-           {" | "}
-
-           <NavLink
-               to="/cart"
-               style={({ isActive }) =>
-                   isActive ? activeStyle : {}
-               }
-           >
-               Cart ({cartCount})
-           </NavLink>
-
-           {" | "}
-
-           <NavLink
-               to="/about"
-               style={({ isActive }) =>
-                   isActive ? activeStyle : {}
-               }
-           >
-               About
-           </NavLink>
-
-       </nav>
-
-   );
-
+      <NavLink
+        to="/about"
+        style={({ isActive }) => (isActive ? activeStyle : {})}
+      >
+        About
+      </NavLink>
+    </nav>
+  );
 }
