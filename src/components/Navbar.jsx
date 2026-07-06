@@ -1,6 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 
-export default function Navbar({ cartCount }) {
+import CartContext from "../contexts/CartContext";
+
+export default function Navbar() {
+  const { cart } = useContext(CartContext);
+
+  const totalItems = cart.reduce(
+    (sum, item) => sum + item.quantity,
+
+    0,
+  );
+
   const activeStyle = {
     color: "red",
 
@@ -37,7 +48,7 @@ export default function Navbar({ cartCount }) {
         to="/cart"
         style={({ isActive }) => (isActive ? activeStyle : {})}
       >
-        Cart ({cartCount})
+        Cart ({totalItems})
       </NavLink>
 
       {" | "}

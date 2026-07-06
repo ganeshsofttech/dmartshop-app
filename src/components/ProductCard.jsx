@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
-export default function ProductCard({ product, addToCart }) {
+import CartContext from "../contexts/CartContext";
+
+export default function ProductCard({ product }) {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div
       style={{
         border: "1px solid gray",
-
-        padding: 20,
-
-        marginBottom: 20,
+        padding: 15,
+        marginBottom: 15,
       }}
     >
       <h1>{product.image}</h1>
